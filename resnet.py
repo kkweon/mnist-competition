@@ -24,7 +24,7 @@ def resnet(input_tensor):
     y : softmax output
     """
     def name_builder(type, stage, block, name):
-        return f"{type}{stage}{block}_branch{name}"
+        return "{}{}{}_branch{}".format(type, stage, block, name)
 
     def identity_block(input_tensor, kernel_size, filters, stage, block):
         F1, F2, F3 = filters

@@ -1,12 +1,12 @@
 import os
 
 from keras.layers import Input
-from keras.models import Model, load_model
+from keras.models import Model
 from keras.callbacks import ModelCheckpoint
 from utils import train_generator
 
 
-class BaseModel:
+class BaseModel(object):
     """Base Model Interface
 
     Methods

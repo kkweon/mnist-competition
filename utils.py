@@ -88,7 +88,7 @@ def train_generator():
     return train_gen, val_gen
 
 
-def plot_(model_path: str, file_path: str):
+def plot_(model_path, file_path):
     """Visualize a model
 
     Parameters

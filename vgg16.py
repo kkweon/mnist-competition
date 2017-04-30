@@ -23,27 +23,27 @@ def vgg(input_tensor):
     y : softmax output tensor
     """
     def two_conv_pool(x, F1, F2, name):
-        x = Conv2D(F1, (3, 3), activation=None, padding='same', name=f'{name}_conv1')(x)
+        x = Conv2D(F1, (3, 3), activation=None, padding='same', name='{}_conv1'.format(name))(x)
         x = BatchNormalization()(x)
         x = Activation('relu')(x)
-        x = Conv2D(F2, (3, 3), activation=None, padding='same', name=f'{name}_conv2')(x)
+        x = Conv2D(F2, (3, 3), activation=None, padding='same', name='{}_conv2'.format(name))(x)
         x = BatchNormalization()(x)
         x = Activation('relu')(x)
-        x = MaxPooling2D((2, 2), strides=(2, 2), name=f'{name}_pool')(x)
+        x = MaxPooling2D((2, 2), strides=(2, 2), name='{}_pool'.format(name))(x)
 
         return x
 
     def three_conv_pool(x, F1, F2, F3, name):
-        x = Conv2D(F1, (3, 3), activation=None, padding='same', name=f'{name}_conv1')(x)
+        x = Conv2D(F1, (3, 3), activation=None, padding='same', name='{}_conv1'.format(name))(x)
         x = BatchNormalization()(x)
         x = Activation('relu')(x)
-        x = Conv2D(F2, (3, 3), activation=None, padding='same', name=f'{name}_conv2')(x)
+        x = Conv2D(F2, (3, 3), activation=None, padding='same', name='{}_conv2'.format(name))(x)
         x = BatchNormalization()(x)
         x = Activation('relu')(x)
-        x = Conv2D(F3, (3, 3), activation=None, padding='same', name=f'{name}_conv3')(x)
+        x = Conv2D(F3, (3, 3), activation=None, padding='same', name='{}_conv3'.format(name))(x)
         x = BatchNormalization()(x)
         x = Activation('relu')(x)
-        x = MaxPooling2D((2, 2), strides=(2, 2), name=f'{name}_pool')(x)
+        x = MaxPooling2D((2, 2), strides=(2, 2), name='{}_pool'.format(name))(x)
 
         return x
 
